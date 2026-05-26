@@ -1,0 +1,69 @@
+use local_service_ai;
+
+insert into service_order(
+    user_id,
+    runner_id,
+    service_type,
+    title,
+    description,
+    price,
+    contact_phone,
+    service_address,
+    expected_service_time,
+    status,
+    create_time,
+    accept_time,
+    finish_time,
+    update_time
+)
+values
+    (
+        1,
+        null,
+        'EXPRESS_PICKUP',
+        '帮我取快递',
+        '小区门口丰巢，取完送到3栋楼下',
+        5.00,
+        '13800000000',
+        '某某小区3栋',
+        null,
+        'CREATED',
+        NOW(),
+        null,
+        null,
+        NOW()
+    ),
+    (
+        1,
+        2,
+        'FOOD_DELIVERY',
+        '帮我买一份盖饭',
+        '楼下餐馆买一份鸡腿饭送到5栋',
+        8.00,
+        '13800000001',
+        '某某小区5栋',
+        null,
+        'ACCEPTED',
+        NOW(),
+        NOW(),
+        null,
+        NOW()
+    ),
+    (
+        3,
+        2,
+        'HOME_SERVICE',
+        '上门喂猫',
+        '晚上帮忙上门喂猫并加水',
+        20.00,
+        '13800000002',
+        '某某小区8栋',
+        null,
+        'DONE',
+        NOW(),
+        NOW(),
+        NOW(),
+        NOW()
+    );
+
+select * from service_order;
